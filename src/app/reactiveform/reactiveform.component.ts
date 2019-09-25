@@ -3,7 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { FormBuilder, Validators, FormArray } from '@angular/forms';
 import { forbiddenNameValidator } from '../shared/user-name.validator';
 import { PasswordValidator } from '../shared/password.validator';
-
+import { RegistrationService } from '../registration.service';
 
 @Component({
   selector: 'app-reactiveform',
@@ -29,7 +29,7 @@ export class ReactiveformComponent implements OnInit {
     this.alternateEmails.push(this.fb.control(''));
   }
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private _registrationService: RegistrationService) { }
 
   // registrationForm = new FormGroup({
   //   userName: new FormControl('hello'),   //hello is a default username
@@ -81,7 +81,17 @@ export class ReactiveformComponent implements OnInit {
       // }
     })
   }
+
+  onSubmit() {
+    console.log(this.registrationForm.value);
+    this._registrationService.register(this.registrationForm.value)
+      .subscribe(
+        response => console.log('Success!', response),
+        error => console.error('Error!', error)
+      );
+  }
 }
+
 //setvalue is for all the formcontrols. we have to give data for all the values
 //in patchvalue we can give data for some values
 
