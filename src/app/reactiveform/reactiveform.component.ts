@@ -12,7 +12,7 @@ import { RegistrationService } from '../registration.service';
 })
 export class ReactiveformComponent implements OnInit {
   registrationForm: FormGroup;
-
+  //comment
   get userName() {
     return this.registrationForm.get('userName');
   }
