@@ -1,0 +1,11 @@
+<form [formGroup]="searchUserForm">
+    <mat-form-field>
+        <mat-select placeholder="User Type" [formControl]="userType" formControlName="filterLabel" multiple>
+            <mat-option #allSelected (click)="toggleAllSelection()" [value]="0">All</mat-option>
+            <mat-option *ngFor="let filters of userTypeFilters" [value]="filters.key"
+                (click)="tosslePerOne(allSelected.viewValue)">
+                {{filters.value}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</form>

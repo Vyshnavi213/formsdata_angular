@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormControl} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,14 @@ import { DepartmentContactComponent } from './department-contact/department-cont
 import { FormsModule } from '@angular/forms';
 import { TdformComponent } from './tdform/tdform.component';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
+import { MatcmpComponent } from './matcmp/matcmp.component';
+import {MatSelectModule} from '@angular/material/select';
+import { MatOption } from '@angular/material';
+import { MatallcmpComponent } from './matallcmp/matallcmp.component';
+import { MatselectallComponent } from './matselectall/matselectall.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +39,9 @@ import { ReactiveformComponent } from './reactiveform/reactiveform.component';
     DepartmentContactComponent,
     TdformComponent,
     ReactiveformComponent,
+    MatcmpComponent,
+    MatallcmpComponent,
+    MatselectallComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +50,9 @@ import { ReactiveformComponent } from './reactiveform/reactiveform.component';
     BrowserAnimationsModule,
     MatButtonModule,
     FormsModule,
-    ReactiveFormsModule
+    MatSelectModule,
+    ReactiveFormsModule,
+    NgMultiSelectDropDownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

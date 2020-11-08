@@ -9,6 +9,10 @@ import { DepartmentOverviewComponent } from './department-overview/department-ov
 import { DepartmentContactComponent } from './department-contact/department-contact.component';
 import { TdformComponent } from './tdform/tdform.component';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
+import { MatcmpComponent } from './matcmp/matcmp.component';
+import { MatallcmpComponent } from './matallcmp/matallcmp.component';
+import { MatselectallComponent } from './matselectall/matselectall.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 const routes: Routes = [
   {
@@ -27,6 +31,18 @@ const routes: Routes = [
   {
     path: 'emp-list',
     component: EmpListComponent
+  },
+  {
+    path: 'matcmp',
+    component: MatcmpComponent
+  },
+  {
+    path: 'matallcmp',
+    component: MatallcmpComponent
+  },
+  {
+    path: 'matselectall',
+    component: MatselectallComponent
   },
   {
     path: 'department-list',
